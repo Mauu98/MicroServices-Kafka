@@ -28,7 +28,7 @@ public class Money {
         return new Money(setScale(this.amount.subtract(money.amount)));
     }
 
-    public Money multiply(Money money){
+    public Money multiply(int money){
         return new Money(setScale(this.amount.multiply(money.amount)));
     }
 
