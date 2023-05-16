@@ -6,10 +6,9 @@ import com.food.ordering.system.domain.valueobject.OrderId;
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 
 public class OrderItem extends BaseEntity<OrderItemId> {
-
     private OrderId orderId;
     private final Product product;
-    private final Money quantity;
+    private final int quantity;
     private final Money price;
     private final Money subTotal;
 
@@ -36,6 +35,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         return new Builder();
     }
 
+
     public OrderId getOrderId() {
         return orderId;
     }
@@ -44,7 +44,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         return product;
     }
 
-    public Money getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -59,7 +59,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     public static final class Builder {
         private OrderItemId orderItemId;
         private Product product;
-        private Money quantity;
+        private int quantity;
         private Money price;
         private Money subTotal;
 
@@ -76,7 +76,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
             return this;
         }
 
-        public Builder quantity(Money val) {
+        public Builder quantity(int val) {
             quantity = val;
             return this;
         }
