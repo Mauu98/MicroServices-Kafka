@@ -7,7 +7,6 @@
     <modules>
         <module>order-service</module>
         <module>common</module>
-        <module>common/common-domain</module>
     </modules>
 
     <parent>
@@ -54,9 +53,9 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>food-ordering-system</groupId>
+                <groupId>com.food.ordering.system</groupId>
                 <artifactId>common-domain</artifactId>
-                <version>{project.version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -80,7 +79,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <release>11</release>
+                    <release>17</release>
                 </configuration>
             </plugin>
         </plugins>

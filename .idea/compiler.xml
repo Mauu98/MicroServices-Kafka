@@ -10,7 +10,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="order-messaging" />
-        <module name="common" />
         <module name="order-application-service" />
         <module name="common-domain" />
         <module name="order-application" />
