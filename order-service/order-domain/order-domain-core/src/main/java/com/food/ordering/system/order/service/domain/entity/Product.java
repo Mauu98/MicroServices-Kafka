@@ -31,4 +31,3 @@ public class Product extends BaseEntity<ProductId> {
         return price;
     }
 }
-

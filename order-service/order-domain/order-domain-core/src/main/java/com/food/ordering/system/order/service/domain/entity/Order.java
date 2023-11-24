@@ -6,13 +6,9 @@ import com.food.ordering.system.order.service.domain.exception.OrderDomainExcept
 import com.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 import com.food.ordering.system.order.service.domain.valueobject.StreetAddress;
 import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Order extends AggregateRoot<OrderId> {
     private final CustomerId customerId;
@@ -70,7 +66,7 @@ public class Order extends AggregateRoot<OrderId> {
 
     private void updateFailureMessages(List<String> failureMessages) {
         if (this.failureMessages != null && failureMessages != null) {
-            this.failureMessages.addAll(failureMessages.stream().filter(message -> !message.isEmpty()).collect(Collectors.toList()));
+            this.failureMessages.addAll(failureMessages.stream().filter(message -> !message.isEmpty()).toList());
         }
         if (this.failureMessages == null) {
             this.failureMessages = failureMessages;
@@ -97,7 +93,7 @@ public class Order extends AggregateRoot<OrderId> {
 
         if (!price.equals(orderItemsTotal)) {
             throw new OrderDomainException("Total price: " + price.getAmount()
-                    + " is not equal to Order items total: " + orderItemsTotal.getAmount() + "!");
+                + " is not equal to Order items total: " + orderItemsTotal.getAmount() + "!");
         }
     }
 

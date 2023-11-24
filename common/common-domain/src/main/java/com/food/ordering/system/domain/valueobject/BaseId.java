@@ -1,10 +1,8 @@
 package com.food.ordering.system.domain.valueobject;
 
-import lombok.EqualsAndHashCode;
+import java.util.Objects;
 
-@EqualsAndHashCode
 public abstract class BaseId<T> {
-
     private final T value;
 
     protected BaseId(T value) {
@@ -15,4 +13,16 @@ public abstract class BaseId<T> {
         return value;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseId<?> baseId = (BaseId<?>) o;
+        return value.equals(baseId.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
 }
